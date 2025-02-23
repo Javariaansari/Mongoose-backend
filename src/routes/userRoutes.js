@@ -1,9 +1,11 @@
-const express = require ('express')
-const router =express.Router();
-const userController =require('../controllers/userController')
+const express = require('express')
+const router = express.Router();
+const userController = require('../controllers/userController');
 
 router.get('/', userController.getAllUsers)
+router.get('/userId', userController.getUserByUserId)
+router.post('/createCustomer', userController.createCustomer)
+router.get('/getAllCustomers', userController.getAllCustomers)
+router.get('/getCustomerById', userController.getCustomerById)
 
-router.get('/userId', userController.getAllUserId)
-
-module.exports =router
+module.exports = router;

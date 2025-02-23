@@ -1,6 +1,7 @@
 const express = require('express');
 const connectDB = require('./db'); // Import DB connection function
-const userRoutes =require('./src/routes/userRoutes')
+const userRoutes = require('./src/routes/userRoutes')
+
 const app = express();
 
 // Connect to MongoDB
@@ -14,11 +15,10 @@ app.get('/', (req, res) => {
     res.send('MongoDB connected with Express.js');
 });
 
-app.use('/users', userRoutes)
-app.use('/userId', userRoutes)
+app.use('/users', userRoutes);
 
 // Start Server
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
